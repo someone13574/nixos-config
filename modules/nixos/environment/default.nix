@@ -5,6 +5,7 @@
     ./users.nix
   ];
 
+  services.solaar.enable = true;
   programs.nix-index-database.comma.enable = true;
 
   nixpkgs.overlays = [

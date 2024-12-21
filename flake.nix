@@ -9,6 +9,9 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
+    solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+    solaar.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -17,10 +20,11 @@
     skeuowaita-icon-theme = { url = "github:RusticBard/Skeuowaita"; flake = false; };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flatpaks, nix-index-database, ... }: let
+  outputs = inputs@{ nixpkgs, home-manager, flatpaks, solaar, nix-index-database, ... }: let
     commonModules = [
       modules/nixos
       flatpaks.nixosModules.declarative-flatpak
+      solaar.nixosModules.default
       nix-index-database.nixosModules.nix-index
       home-manager.nixosModules.home-manager
       {
