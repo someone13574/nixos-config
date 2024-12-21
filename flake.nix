@@ -38,6 +38,13 @@
       modules = commonModules ++ [ hosts/virtual.nix ];
     };
 
+    nixosConfigurations.owen-thinkpad = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      specialArgs = { inherit inputs; };
+      modules = commonModules ++ [ hosts/thinkpad.nix ];
+    };
+
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
   };
 }
