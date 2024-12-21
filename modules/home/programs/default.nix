@@ -2,7 +2,6 @@
   imports = [
     ./firefox.nix
     ./git.nix
-    ./thunderbird.nix
     ./vscode.nix
     ./zsh.nix
   ];
