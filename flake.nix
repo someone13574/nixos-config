@@ -18,6 +18,7 @@
     firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
     thunderbird-gnome-theme = { url = "github:rafaelmardojai/thunderbird-gnome-theme"; flake = false; };
     skeuowaita-icon-theme = { url = "github:RusticBard/Skeuowaita"; flake = false; };
+    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, flatpaks, solaar, nix-index-database, ... }: let
@@ -26,6 +27,7 @@
       flatpaks.nixosModules.declarative-flatpak
       solaar.nixosModules.default
       nix-index-database.nixosModules.nix-index
+      inputs.distro-grub-themes.nixosModules.x86_64-linux.default
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;

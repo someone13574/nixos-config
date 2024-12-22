@@ -1,7 +1,19 @@
 { pkgs, ... }: {
   boot = {
     # Bootloader
-    loader.systemd-boot.enable = true;
+    loader.systemd-boot.enable = false;
+    loader.grub.enable = true;
+    loader.grub.devices = [ "nodev" ];
+    loader.grub.configurationLimit = 10;
+    loader.grub.efiSupport = true;
+    loader.grub.extraEntries = ''
+        menuentry "Reboot" {
+            reboot
+        }
+        menuentry "Poweroff" {
+            halt
+        }
+    '';
     loader.efi.canTouchEfiVariables = true;
 
     # Use latest kernel
@@ -26,5 +38,11 @@
       theme = "spinner";
       logo = data/empty.png;
     };
+  };
+
+  # Grub theme
+  distro-grub-themes = {
+    enable = true;
+    theme = "nixos";
   };
 }
