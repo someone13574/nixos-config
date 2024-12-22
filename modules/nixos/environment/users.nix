@@ -3,7 +3,7 @@
 
   users.users.owen = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "docker" "wheel" ];
     initialPassword = "password";
     shell = pkgs.zsh;
   };

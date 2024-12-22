@@ -12,6 +12,9 @@
     solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
     solaar.inputs.nixpkgs.follows = "nixpkgs";
 
+    winapps.url = "github:winapps-org/winapps";
+    winapps.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -20,7 +23,7 @@
     skeuowaita-icon-theme = { url = "github:RusticBard/Skeuowaita"; flake = false; };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flatpaks, solaar, nix-index-database, ... }: let
+  outputs = inputs@{ nixpkgs, winapps, home-manager, flatpaks, solaar, nix-index-database, ... }: let
     commonModules = [
       modules/nixos
       flatpaks.nixosModules.declarative-flatpak

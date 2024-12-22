@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }: {
   imports = [
     ./desktop.nix
+    ./docker.nix
     ./flatpak.nix
     ./users.nix
   ];
