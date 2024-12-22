@@ -2,9 +2,11 @@
   imports = [
     ./desktop.nix
     ./flatpak.nix
+    ./sound.nix
     ./users.nix
   ];
 
+  services.printing.enable = true;
   services.solaar.enable = true;
   programs.nix-index-database.comma.enable = true;
 
