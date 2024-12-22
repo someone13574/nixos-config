@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     adw-gtk3
     gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.just-perfection
     gnomeExtensions.rounded-window-corners-reborn
   ];
 
@@ -40,9 +41,10 @@
       };
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [ "rounded-window-corners@fxgn" "AlphabeticalAppGrid@stuarthayhurst" ];
+        enabled-extensions = [ "AlphabeticalAppGrid@stuarthayhurst" "rounded-window-corners@fxgn" "just-perfection-desktop@just-perfection" ];
         favorite-apps = [ "firefox.desktop" "org.gnome.Nautilus.desktop" "code.desktop" "org.gnome.Settings.desktop" "org.gnome.Console.desktop" ];
       };
+      "org/gnome/shell/extensions/just-perfection".workspace-switcher-size = 10;
     };
   };
 }
