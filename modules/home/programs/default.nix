@@ -5,7 +5,7 @@
     ./vscode.nix
     ./zsh.nix
   ];
-  
+
   home.packages = with pkgs; [
     obsidian
     zed-editor

@@ -21,7 +21,7 @@
 
       CPU_HWP_DYN_BOOST_ON_AC = 1;
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
-      
+
       AMDGPU_ABM_LEVEL_ON_AC = 0;
       AMDGPU_ABM_LEVEL_ON_BAT = 3;
     };

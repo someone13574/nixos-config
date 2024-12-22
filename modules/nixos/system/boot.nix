@@ -7,12 +7,12 @@
     loader.grub.configurationLimit = 10;
     loader.grub.efiSupport = true;
     loader.grub.extraEntries = ''
-        menuentry "Reboot" {
-            reboot
-        }
-        menuentry "Poweroff" {
-            halt
-        }
+      menuentry "Reboot" {
+          reboot
+      }
+      menuentry "Poweroff" {
+          halt
+      }
     '';
     loader.efi.canTouchEfiVariables = true;
 
