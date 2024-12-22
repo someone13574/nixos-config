@@ -38,6 +38,7 @@
         edge-tiling = true;
         dynamic-workspaces = true;
         workspaces-only-on-primary = true;
+        experimental-features = [ "scale-monitor-framebuffer" "xwayland-native-scaling" ];
       };
       "org/gnome/shell" = {
         disable-user-extensions = false;
