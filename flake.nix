@@ -57,7 +57,7 @@
         system = "x86_64-linux";
 
         specialArgs = { inherit inputs; swapsize = 16384; };
-        modules = commonModules ++ [ hosts/desktop.nix ];
+        modules = commonModules ++ [ hosts/desktop.nix modules/nixos/optional/nvidia.nix ];
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
