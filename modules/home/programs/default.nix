@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    gh
     obsidian
     zed-editor
   ];
