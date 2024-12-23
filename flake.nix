@@ -50,7 +50,7 @@
         system = "x86_64-linux";
 
         specialArgs = { inherit inputs; swapsize = 16384; };
-        modules = commonModules ++ [ hosts/thinkpad.nix ];
+        modules = commonModules ++ [ hosts/thinkpad.nix modules/nixos/optional/tlp.nix ];
       };
 
       nixosConfigurations.owen-desktop = nixpkgs.lib.nixosSystem {
