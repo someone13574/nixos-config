@@ -42,15 +42,22 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; swapsize = 4096; };
         modules = commonModules ++ [ hosts/virtual.nix ];
       };
 
       nixosConfigurations.owen-thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; swapsize = 16384; };
         modules = commonModules ++ [ hosts/thinkpad.nix ];
+      };
+
+      nixosConfigurations.owen-desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        specialArgs = { inherit inputs; swapsize = 16384; };
+        modules = commonModules ++ [ hosts/desktop.nix ];
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;

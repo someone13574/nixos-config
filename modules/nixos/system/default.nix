@@ -1,12 +1,13 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
     ./boot.nix
     ./btrfs.nix
-    ./hardware-configuration.nix
+    ./filesystems.nix
   ];
 
   # Networking
   networking.networkmanager.enable = true;
+  networking.useDHCP = lib.mkDefault true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;

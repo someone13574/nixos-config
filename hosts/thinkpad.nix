@@ -1,9 +1,6 @@
 { ... }: {
   networking.hostName = "owen-thinkpad";
 
-  services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
-
   system.stateVersion = "24.11";
 
   services.power-profiles-daemon.enable = false;
