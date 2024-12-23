@@ -41,7 +41,7 @@
     - Rule:
       - MouseGesture: [Forward Button, Mouse Up]
       - KeyPress:
-        - [Super_L, s]
+        - [Super_L]
         - click
     - Rule:
       - MouseGesture: Mouse Gesture Button
